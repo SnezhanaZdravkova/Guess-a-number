@@ -24,3 +24,31 @@ def welcome():
 
 
 welcome()
+
+
+def player_guess():
+    """
+    Get the guess fuigures input from the player
+    """
+
+    guess = int(input("Please, enter a number: \n"))
+    validate_guess(guess)
+
+
+def validate_guess(value):
+    """
+    Inside the try,
+    check is the value an intiger and is it not less or equal to 0
+    """
+
+    try:
+        if value <= 0:
+            raise ValueError(
+                f"You have entered {value}."
+                f"Please type a number larger than 0 next time"
+            )
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+
+
+player_guess()
