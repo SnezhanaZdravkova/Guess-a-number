@@ -31,7 +31,7 @@ def player_guess():
     Get the guess fuigures input from the player
     """
 
-    guess = int(input("Please, enter a number: \n"))
+    guess = input("Please, enter a number: \n")
     validate_guess(guess)
 
 
@@ -41,15 +41,16 @@ def validate_guess(guess):
     check is the value an intiger and is it not less or equal to 0,
     or larger than 100.
     """
-    while guess is int:
+    while guess.isdigit:
         try:
             # return int(input(value))
-            if guess <= 0 or guess > 100:
+            if int(guess) < 1 or int(guess) > 100:
                 raise ValueError(
                     f"You have entered {guess}."
                     f"Please type a number larger than 0 and les then 100!"
                 )
             else:
+                print("Let's play!")
                 play()
         except ValueError as error:
             print(f"Invalid data: {error}, please try again.\n")
