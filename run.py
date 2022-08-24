@@ -10,13 +10,14 @@ def welcome():
     """
 
     print("Welcome to 'Guess a number game'! ")
-    print("In this game you will need to guess a number between 1 and 10. ")
-    print("You can guess only one number at a time.")
+    print("In this game you will need to guess a number between 1 and 100. ")
+    print("You can guess only one number at a time ")
+    print("And computer will respond.")
 
     name = input("Enter your name, please: \n")
     playing = input(
         f"Hello {name}! Do you want to play? "
-        f"Please enter 'Yes' to play or 'Q' to quit: \n")
+        f"Please enter 'Q' to quit or any letter to play: \n")
     if playing.lower() == "q":
         quit()
     else:
@@ -38,17 +39,22 @@ def player_guess():
 def validate_guess(value):
     """
     Inside the try,
-    check is the value an intiger and is it not less or equal to 0
+    check is the value an intiger and is it not less or equal to 0,
+    or larger than 100.
     """
-
-    try:
-        if value <= 0:
-            raise ValueError(
-                f"You have entered {value}."
-                f"Please type a number larger than 0 next time"
-            )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+    while value is int:
+        try:
+            # return int(input(value))
+            if value <= 0 or value > 100:
+                raise ValueError(
+                    f"You have entered {value}."
+                    f"Please type a number larger than 0 and les then 100!"
+                )
+        except ValueError as error:
+            print(f"Invalid data: {error}, please try again.\n")
+            break
+    else:
+        print("Please, enter a number between 1 and 100!")
 
 
 player_guess()
