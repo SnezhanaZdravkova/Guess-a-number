@@ -41,17 +41,13 @@ def validate_guess(guess):
     check is the value an intiger and is it not less or equal to 0,
     or larger than 100.
     """
-    while guess.isdigit:
+    while guess.isdigit():
         try:
-            # return int(input(value))
             if int(guess) < 1 or int(guess) > 100:
                 raise ValueError(
                     f"You have entered {guess}."
                     f"Please type a number larger than 0 and les then 100!"
                 )
-            else:
-                print("Let's play!")
-                play()
         except ValueError as error:
             print(f"Invalid data: {error}, please try again.\n")
             break
