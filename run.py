@@ -17,9 +17,9 @@ def welcome():
     Define the decision of the player
     """
 
-    print("Welcome to 'Guess a number game'! ")
-    print("In this game you will need to guess a number. ")
-    print("You can guess only one number at a time ")
+    print("Welcome to 'Guess a number game'!")
+    print("In this game you will need to guess a number.")
+    print("You can guess only one number at a time")
     print("And computer will respond.")
 
     name = input("Enter your name, please: \n")
@@ -36,7 +36,7 @@ def play(wins):
     """
 
     level_dame = input("What game level would you like to play?\
-         E for Easy, M for Medium, or H for High: ")
+         E for Easy, M for Medium, or H for High: \n")
 
     if level_dame.lower() == "e":
         max_number = 10
@@ -87,7 +87,7 @@ def main():
     start_again = "y"
     while start_again.lower() == "y":
         wins = play(wins)
-        start_again = input("Would you like to play again? (y/n): ")
+        start_again = input("Would you like to play again? (y/n): \n")
         print()
     print("Bye!")
 
