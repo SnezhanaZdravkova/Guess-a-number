@@ -18,18 +18,20 @@ def welcome():
     """
 
     print("Welcome to 'Guess a number game'! ")
-    print("In this game you will need to guess a number between 1 and 100. ")
+    print("In this game you will need to guess a number. ")
     print("You can guess only one number at a time ")
     print("And computer will respond.")
 
     name = input("Enter your name, please: \n")
-    playing = input(
-        f"Hello {name}! Do you want to play? "
-        f"Please enter 'Q' to quit or any letter to play: \n")
-    if playing.lower() == "q":
-        quit()
-    else:
-        print("Okay! Let's play :)")
+    print("Hello ", name, "!")
+    print()
+    # playing = input(
+    #     f"Hello {name}! Do you want to play? "
+    #     f"Please enter 'Q' to quit or any letter to play: \n")
+    # if playing.lower() == "q":
+    #     quit()
+    # else:
+    #     print("Okay! Let's play :)")
 
 
 def player_guess():
