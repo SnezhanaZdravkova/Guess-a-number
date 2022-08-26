@@ -1,31 +1,19 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Snezhana Zdravkova,
+# GUESS-A-NUMBER
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+----
 
-## Reminders
+> Guess-The-Number is a Python based application fully run within the terminal.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+> This app runs three levels of difficulty, where the player has the options to chooce:
+>
+>> 1. First level: The Player has to guess a randomly generated number between 1 and 10.
+>> 2. Second level: The Player has to guess a randomly generated number between 1 and 100.
+>> 3. Thirth level: The Player has to guess a randomly generated number between 1 and 1000.
 
-## Creating the Heroku app
+> This application explores the posibilites of automation with Python, handling user inputs and random outcomes through the use of classes and functions.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+> Guess-A-Number is deployed on Heroku.
 
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+> Live Link to the app on Heroku here:
