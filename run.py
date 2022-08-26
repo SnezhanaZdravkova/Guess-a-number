@@ -4,6 +4,14 @@ used for imports
 import random
 
 
+def display_title():
+    """
+    Function used only to print the title of the game.
+    """
+    print("GUESS A NUMBER")
+    print()
+
+
 def welcome():
     """
     Define the decision of the player
