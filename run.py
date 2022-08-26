@@ -3,8 +3,6 @@ used for imports
 """
 import random
 
-number = random.randrange(1, 100)
-
 
 def welcome():
     """
@@ -31,42 +29,46 @@ def player_guess():
     Get the guess fuigures input from the player
     """
 
-    guess = input("Please, enter a number: \n")
-    validate_guess(guess)
 
-
-def validate_guess(guess):
+def validate_guess():
     """
-    Inside the try,
     check is the value an intiger and is it not less or equal to 0,
-    or larger than 100.
+    or larger than player's guess.
     """
-    while guess.isdigit():
-        try:
-            if int(guess) < 1 or int(guess) > 100:
-                raise ValueError(
-                    f"You have entered {guess}."
-                    f"Please type a number larger than 0 and les then 100!"
-                )
-        except ValueError as error:
-            print(f"Invalid data: {error}, please try again.\n")
-            break
+    guess = 0
+    if int(guess) < 1 or int(guess) > 100:
+        raise ValueError(
+            f"You have entered {guess}."
+            f"Please type a number larger than 0 and les then 100!"
+        )
+    else:
+        pass
 
 
 def play():
     """
     Function runs the main game
     """
-    guess = int(input())
+
+    num = int(input())
+    number = random.randint(1, num)
+    guess = None
+    score = 0
     while guess != number:
+        guess = input(f"Please, enter a number between 1 and {num}: \n")
+        if guess.isdigit():
+            guess = int(guess)
         if guess < number:
             print("You need to guess higher. Try again!")
             guess = int(input("Please, enter a number: \n"))
+            score += 1
         elif guess > number:
             print("You need to guess lower. Try again")
-            guess = int(input("\nPlease, enter a number: \n"))
+            guess = int(input("Please, enter a number: \n"))
+            score += 1
 
     print("Congratulations! You guesed the number correctly!")
+    print(f"You have reached the correct number in {score} guesses.")
 
 
 def main():
@@ -75,7 +77,7 @@ def main():
     """
     welcome()
     player_guess()
-    validate_guess(input())
+    validate_guess()
     play()
 
 
