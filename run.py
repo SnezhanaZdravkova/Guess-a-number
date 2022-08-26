@@ -25,18 +25,14 @@ def welcome():
     name = input("Enter your name, please: \n")
     print("Hello ", name, "!")
     print()
-    # playing = input(
-    #     f"Hello {name}! Do you want to play? "
-    #     f"Please enter 'Q' to quit or any letter to play: \n")
-    # if playing.lower() == "q":
-    #     quit()
-    # else:
-    #     print("Okay! Let's play :)")
 
 
 def play(wins):
     """
     Function runs the main game
+    Sets the secret number,
+    gives the player to chooce the difficulty of the game
+    returns the result
     """
 
     level_dame = input("What game level would you like to play?\
@@ -68,7 +64,8 @@ def play(wins):
             print("You need to guess lower. Try again")
             score += 1
         elif guess == number:
-            print(f"Congratulations! You guesed the number {number} correctly!")
+            print(f"Congratulations! You guesed\
+                 the number {number} correctly!")
             print(f"You have reached the correct number in {score} guesses.")
             wins += 1
             print("You have won ", wins, "games.")
@@ -78,6 +75,9 @@ def play(wins):
 def main():
     """
     function to run all others functions
+    first display the title and welcome the player,
+    and then reset the game with the while statement
+    or terminate the game
     """
     display_title()
     welcome()
