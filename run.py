@@ -34,61 +34,64 @@ def welcome():
     #     print("Okay! Let's play :)")
 
 
-def player_guess():
-    """
-    Get the guess fuigures input from the player
-    """
-
-
-def validate_guess():
-    """
-    check is the value an intiger and is it not less or equal to 0,
-    or larger than player's guess.
-    """
-    guess = 0
-    if int(guess) < 1 or int(guess) > 100:
-        raise ValueError(
-            f"You have entered {guess}."
-            f"Please type a number larger than 0 and les then 100!"
-        )
-    else:
-        pass
-
-
-def play():
+def play(wins):
     """
     Function runs the main game
     """
 
-    num = int(input())
-    number = random.randint(1, num)
-    guess = None
-    score = 0
-    while guess != number:
-        guess = input(f"Please, enter a number between 1 and {num}: \n")
-        if guess.isdigit():
-            guess = int(guess)
+    level_dame = input("What game level would you like to play?\
+         E for Easy, M for Medium, or H for High: ")
+
+    if level_dame.lower() == "e":
+        max_number = 10
+        guesses = 5
+    elif level_dame.lower() == "m":
+        max_number = 100
+        guesses = 10
+    elif level_dame.lower() == "h":
+        max_number = 1000
+        guesses = 8
+    else:
+        print("Sorry! Invalid guess. Please try again!")
+
+    number = random.randint(1, max_number)
+    print(f"The secret number is a number inrange from 1 to {max_number}")
+    print()
+    score = 1
+    while score <= guesses:
+        guess = int(input("Please, enter a number: \n"))
+
         if guess < number:
             print("You need to guess higher. Try again!")
-            guess = int(input("Please, enter a number: \n"))
             score += 1
         elif guess > number:
             print("You need to guess lower. Try again")
-            guess = int(input("Please, enter a number: \n"))
             score += 1
-
-    print("Congratulations! You guesed the number correctly!")
-    print(f"You have reached the correct number in {score} guesses.")
+        elif guess == number:
+            print(f"Congratulations! You guesed the number {number} correctly!")
+            print(f"You have reached the correct number in {score} guesses.")
+            wins += 1
+            print("You have won ", wins, "games.")
+            return wins
 
 
 def main():
     """
     function to run all others functions
     """
+    display_title()
     welcome()
-    player_guess()
-    validate_guess()
-    play()
+    # Initialize variable
+    wins = 0
+    # give the player chance to play again
+    start_again = "y"
+    while start_again.lower() == "y":
+        wins = play(wins)
+        start_again = input("Would you like to play again? (y/n): ")
+        print()
+    print("Bye!")
 
 
-main()
+# If started as the main module, call the main function
+if __name__ == "__main__":
+    main()
