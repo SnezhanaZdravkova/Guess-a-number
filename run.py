@@ -56,6 +56,9 @@ def play(wins):
     score = 1
     while score <= guesses:
         guess = int(input("Please, enter a number: \n"))
+        if guess < 1 or guess > max_number:
+            print(f"Your guess number should be only\
+                     between 1 and {max_number}")
 
         if guess < number:
             print("You need to guess higher. Try again!")
