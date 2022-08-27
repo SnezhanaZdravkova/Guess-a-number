@@ -33,6 +33,7 @@ def play(wins):
     Sets the secret number,
     gives the player to chooce the difficulty of the game
     returns the result
+    Every level has a number of trys
     """
 
     level_dame = input("What game level would you like to play?\
