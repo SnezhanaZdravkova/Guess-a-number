@@ -36,7 +36,7 @@ def play(wins):
     """
 
     level_dame = input("What game level would you like to play?\
-         E for Easy, M for Medium, or H for High: \n")
+        E for Easy, M for Medium, or H for High: \n")
 
     if level_dame.lower() == "e":
         max_number = 10

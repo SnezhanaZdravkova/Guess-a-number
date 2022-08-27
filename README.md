@@ -4,7 +4,7 @@
 
 ----
 
-> Guess-The-Number is a Python based application fully run within the terminal.
+> Guess-A-Number is a Python based application fully run within the terminal.
 
 > This app runs three levels of difficulty, where the player has the options to chooce:
 >
@@ -16,4 +16,8 @@
 
 > Guess-A-Number is deployed on Heroku.
 
-> Live Link to the app on Heroku here:
+> Live Link to the app on Heroku here: [Guess-A-Number](https://github.com/SnezhanaZdravkova/Guess-a-number "Guess-A-Number")
+
+----
+
+## Application across difference platforms
